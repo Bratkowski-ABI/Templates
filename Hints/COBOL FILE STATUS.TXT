@@ -1,0 +1,134 @@
+00	
+ Successful completion
+
+02	
+ Indexed files only. Possible causes:
+
+For a READ statement, the key value for the current key is equal to the value of that same key in the next record in the current key of reference.
+
+For a WRITE or REWRITE statement, the record just written created a duplicate key value for at least one alternate record key for which duplicates are allowed.
+
+04	
+The length of the record being processed does not conform to the fixed file attributes for that file. 
+
+05	
+The referenced optional file is not present at the time the OPEN statement is executed. 
+
+06	
+ Attempted to write to a file that has been opened for input.
+
+07	
+ Sequential files only. For an OPEN or CLOSE statement with the REEL/UNIT phrase the referenced file is a non-reel/unit medium. 
+
+08	
+ Attempted to read from a file opened for output.
+
+09	
+No room in directory or directory does not exist.
+
+10	
+No next logical record exists. You have reached the end of the file. 
+
+12	
+ Attempted to open a file that is already open.
+
+13	
+File not found.
+
+14	
+ Relative files only. The number of significant digits in the relative record number is larger than the size of the relative key data item described for that file. 
+ Too many files open simultaneously (Micro Focus).
+
+15	
+Too many indexed files open (Micro Focus).
+
+16	
+Too many device files open (Micro Focus).
+
+17	
+ Record error: probably zero length (Micro Focus).
+
+18	
+Read part record error: EOF before EOR or file open in wrong mode (Micro Focus).
+
+19	
+ Rewrite error: open mode or access mode wrong (Micro Focus).
+
+20	
+ Device or resource busy (Micro Focus).
+
+21	
+ Sequentially accessed files only. Indicates a sequence error. The ascending key requirements of successive record key values has been violated, or, the prime record key value has been changed by a COBOL program between successful execution of a READ statement and execution of the next REWRITE statement for that file. 
+
+22	
+ Indexed and relative files only. Indicates a duplicate key condition. Attempt has been made to store a record that would create a duplicate key in the indexed or relative file OR a duplicate alternate record key that does not allow duplicates. 
+
+23	
+ Indicates no record found. An attempt has been made to access a record, identified by a key, and that record does not exist in the file. Alternatively a START or READ operation has been tried on an optional input file that is not present.
+
+24	
+ Relative and indexed files only. Indicates a boundary violation. Possible causes:
+ Attempting to write beyond the externally defined boundaries of a file
+ Attempting a sequential WRITE operation has been tried on a relative file, but the number of significant digits in the relative record number is larger than the size of the relative key data item described for the file. 
+
+30	
+The I/O statement was unsuccessfully executed as the result of a boundary violation for a sequential file or as the result of an I/O error, such as a data check parity error, or a transmission error. 
+
+32	
+Too many Indexed files opened. This can also happen when a sequential file is open for input and an attempt is made to open the same file for output.(Run Time System (RTS) message by Micro Focus).
+
+34	
+The I/O statement failed because of a boundary violation. This condition indicates that an attempt has been made to write beyond the externally defined boundaries of a sequential file. 
+
+35	
+An OPEN operation with the I-O, INPUT, or EXTEND phrases has been tried on a non-OPTIONAL file that is not present. 
+
+37	
+An OPEN operation has been tried on a file which does not support the open mode specified in the OPEN statement. 
+
+38	
+An OPEN operation has been tried on a file previously closed with a lock. 
+
+39	
+A conflict has been detected between the fixed file attributes and the attributes specified for the file in the program. 
+ This is usually caused by a conflict with record-length, key-length, key-position or file organization. 
+
+Other possible causes are:
+ 1. Alternate indexes are incorrectly defined.
+ 2. The Recording Mode is Variable or Fixed or not defined the same as when the file was created..
+
+41	
+An OPEN operation has been tried on file already opened.
+
+42	
+A CLOSE operation has been tried on file already closed.
+
+43	
+Files in sequential access mode. The last I/O statement executed for the file, before the execution of a DELETE or REWRITE statement, was not a READ statement. 
+
+44	
+A boundary violation exists. Possible causes:
+ Attempting to WRITE or REWRITE a record that is larger than the largest, or smaller than the smallest record allowed by the RECORD IS VARYING clause of the associated file
+ Attempting to REWRITE a record to a file and the record is not the same size as the record being replaced. 
+
+46	
+A sequential READ operation has been tried on a file open in the INPUT or I-O mode but no valid next record has been established. 
+
+47	
+A READ or START operation has been tried on a file not opened INPUT or I-O. 
+
+48	
+A WRITE operation has been tried on a file not opened in the OUTPUT, I-O, or EXTEND mode, or on a file open I-O in the sequential access mode. 
+
+49	
+A DELETE or REWRITE operation has been tried on a file that is not opened I-O.
+
+91	For VSAM only.  Password Failure
+92	For VSAM only. Logical Error
+93	For VSAM only. Recourse not Available
+94	For VSAM with CMPR2 compiler-option only: No file position indicator for sequential request.
+95	For VSAM only.  Invalid or incomplete file information
+96	For VSAM under MVS: No DD statement specified for this file. 
+
+FOR VSAM and SAM under VSE: No DLBL statement specified for this file.
+97	For VSAM only.  OPEN statement execution successful: File integrity verified.
