@@ -1,18 +1,18 @@
 # Templates
 
-## Included
+**Included**
 
 - CL
-  > AS400 Control Language
+  > AS400; Control Language
   > 
 - JCL
-  > z/OS Job Control Language
+  > z/OS; Job Control Language
   > 
 - COBOL
   > COmmon Business-Oriented Language  
   > 
-- PL/I
-  > Programming Language One  
+- PL1
+  > PL/I; Programming Language One  
   > 
 - RPG
   > Report Programming Generator 
