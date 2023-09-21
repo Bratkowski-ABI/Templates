@@ -48,7 +48,7 @@
              MOVE "1"                               TO LNK-ERR-SW 
            END-IF
            MOVE DECL                                TO LNK-ERRO-DSC  
-	         MOVE DECL-MSG-CODE                       TO LNK-ERR-CODE                    
+	   MOVE DECL-MSG-CODE                       TO LNK-ERR-CODE                    
            
            GOBACK
            .
