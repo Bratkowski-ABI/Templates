@@ -1,0 +1,56 @@
+      ****************************************************************
+      DECLARATIVES.
+
+      DECL-myFile SECTION.
+           USE AFTER EXCEPTION PROCEDURE ON myFile
+           .
+       ERROR-myFile.
+           MOVE "myFile"              TO DECL-FILE-NAME
+           MOVE FS-myFile             TO DECL-FILE-FS
+
+           PERFORM DECL-ERROR
+           .
+      * -------------------------------------------------------------- *
+       DECL-ERROR.
+           ROLLBACK
+	    * end comitment if needed 
+
+	   IF    IS-OPEN-myFile-YES
+           THEN
+             CLOSE       myFile
+             SET IS-OPEN-myFile-NO        TO TRUE
+           END-IF
+           IF    IS-OPEN-errorDscFile-YES
+           THEN
+             STRING
+                    "FS0"
+                    DECL-FILE-FS
+                DELIMITED BY SIZE
+                                       INTO DECL-MSG-CODE
+             END-STRING
+
+             INITIALIZE errorDscFile(on R)
+             MOVE langSeting             TO lang    OF errorDscFile
+             MOVE DECL-MSG-CODE          TO code    OF errorDscFile
+             READ errorDscFile
+               INVALID KEY
+                 MOVE "LACK OF DESCRIPTION"         TO DECL-MSG-TXT
+                 MOVE "1"                           TO LNK-ERR-SW 
+               NOT INVALID KEY
+                 MOVE descrip   OF errorDscFile         TO DECL-MSG-TXT
+                 MOVE swOfErr   OF errorDscFile         TO LNK-ERR-SW 
+             END-READ
+
+             CLOSE       WMSGERR
+             SET IS-OPEN-WMSGERR-NO          TO TRUE
+           ELSE
+             MOVE "CAN NOT READ DESCRIPTION"        TO DECL-MSG-TXT
+             MOVE "1"                               TO LNK-ERR-SW 
+           END-IF
+           MOVE DECL                                TO LNK-ERRO-DSC  
+	         MOVE DECL-MSG-CODE                       TO LNK-ERR-CODE                    
+           
+           GOBACK
+           .
+
+      END DECLARATIVES.
