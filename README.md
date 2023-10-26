@@ -1,7 +1,8 @@
 # Templates
 
-**Included**
+Public examples and hints that might be usfule for working with z/OS and AS400 
 
+**Included examples of**
 - CL
   > AS400; Control Language
   > 
@@ -16,6 +17,9 @@
   > 
 - RPG
   > Report Programming Generator 
+  > 
+- SQL
+  > Structured Query Language
   > 
 - Hints
   > Some hints for platforms 
