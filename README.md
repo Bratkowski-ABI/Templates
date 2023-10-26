@@ -1,6 +1,6 @@
 # Templates
 
-Public examples and hints that might be usfule for working with z/OS and AS400 
+Public examples and hints that might be usfull for working with z/OS and AS400 
 
 **Included examples of**
 - CL  &emsp;&emsp;&emsp;    -&gt; [AS400; Control Language](https://www.ibm.com/docs/en/i/7.2?topic=programming-control-language)
