@@ -41,8 +41,8 @@
                  MOVE swOfErr   OF errorDscFile         TO LNK-ERR-SW 
              END-READ
 
-             CLOSE       WMSGERR
-             SET IS-OPEN-WMSGERR-NO          TO TRUE
+             CLOSE       errorDscFile
+             SET IS-OPEN-errorDscFile-NO          TO TRUE
            ELSE
              MOVE "CAN NOT READ DESCRIPTION"        TO DECL-MSG-TXT
              MOVE "1"                               TO LNK-ERR-SW 
